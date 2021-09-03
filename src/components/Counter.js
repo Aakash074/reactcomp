@@ -42,12 +42,14 @@ const Counter = ({ maxCount, initialCount }) => {
 				id="counter-val"
 				value={count}
 				max={maxCount}
-				onChange={(e) => setCount(Number(e.target.value))}
+				onChange={(e) => 
+					Number(e.target.value) <= maxCount ? setCount(Number(e.target.value)) : setCount(maxCount)
+				}
 			></input>
 
 			<button
 				id="increment-btn"
-				className="btn"
+				className="btncomp"
 				title="Increment"
 				onClick={handleincrement}
 			>

@@ -13,7 +13,9 @@ export const Form = ({onSubmit, closeModal}) => {
 			<div className="initializer-input-wrapper">
 				<input
 					id="initialinput"
-					onChange={(e) => setInitialCount(Number(e.target.value))}
+					onChange={(e) => 	
+							e.target.value <= maxCount? setInitialCount(Number(e.target.value)) : alert('Initial Count can not be more than Maximum Value')									
+					}
 					value={initialCount}
 					type="number"
 					placeholder="Enter initial Count"
@@ -29,7 +31,8 @@ export const Form = ({onSubmit, closeModal}) => {
 			<div className="initializer-input-wrapper">
 				<input
 					id="maxvalinput"
-					onChange={(e) => setMaxCount(Number(e.target.value))}
+					onChange={(e) => 
+						e.target.value >= initialCount? setMaxCount(Number(e.target.value)) : alert('Max count can not be less than Initital value')}
 					value={maxCount}
 					type="number"
 					placeholder="Enter maximum Count"
