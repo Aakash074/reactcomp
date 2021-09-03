@@ -97,7 +97,7 @@ body {
 	  top: 50%;
 	  height: auto;
 	  transform: translate(-50%, -50%);
-	  max-width: 35em;
+	  max-width: 32em;
 	  max-height: calc(100% - 1em);
 	}
   }

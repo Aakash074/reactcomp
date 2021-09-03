@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from "react";
 import "../css/initializer.css";
 
-export const Form = ({onSubmit}) => {
+export const Form = ({onSubmit, closeModal}) => {
 
   const [maxCount, setMaxCount] = useState(1000);
 	const [initialCount, setInitialCount] = useState(1);
@@ -11,11 +11,6 @@ export const Form = ({onSubmit}) => {
     <form onSubmit={onSubmit}>
     <div id="initializer">
 			<div className="initializer-input-wrapper">
-				<button
-					className="btn"
-				>
-					Set Initial Count 
-				</button>
 				<input
 					id="initialinput"
 					onChange={(e) => setInitialCount(Number(e.target.value))}
@@ -23,13 +18,15 @@ export const Form = ({onSubmit}) => {
 					type="number"
 					placeholder="Enter initial Count"
 				></input>
+				<button
+					className="btn"
+				>
+					Set Initial Count 
+				</button>
 				
 			</div>
 
 			<div className="initializer-input-wrapper">
-				<button className="btn" >
-					Set Maximum Count
-				</button>
 				<input
 					id="maxvalinput"
 					onChange={(e) => setMaxCount(Number(e.target.value))}
@@ -37,12 +34,14 @@ export const Form = ({onSubmit}) => {
 					type="number"
 					placeholder="Enter maximum Count"
 				></input>
-
-				
-			</div>
-			<button className="form-control btn btn-primary" type="submit">
-          Submit
-        </button>
+				<button className="btn" >
+					Set Maximum Count
+				</button>
+			</div> 
+			<br></br>
+			<center>
+				<button className = "btn" onClick={closeModal}> Skip </button> 
+			</center>
 		</div>
 	</form>
   );

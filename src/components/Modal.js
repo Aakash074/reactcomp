@@ -42,7 +42,7 @@ export const Modal = ({
           </button>
           
           <div className="modal-body">
-            <Form onSubmit={onSubmit} />
+            <Form onSubmit={onSubmit} closeModal={closeModal} />
           </div>
           
           
